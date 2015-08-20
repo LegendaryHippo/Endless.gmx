@@ -1,4 +1,5 @@
 /// scr_spawn_enemies();
+randomize();
 var wave_size = irandom_range(3, 6);
 
 repeat(wave_size)

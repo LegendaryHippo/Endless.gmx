@@ -30,6 +30,9 @@ dir = obj_shoot_enemy.dir;
 spd = 3;
 hsp = 0;
 vsp = 0;
+hp = 1  // Because of a bug when you hit an enemy bullet, which resulted
+        // in the game crashing because the game is trying to access
+        // the bullet's hp variable
 </string>
           </argument>
         </arguments>
@@ -58,6 +61,12 @@ y += vsp;
 
 // Destroy if collide with solid
 if(place_meeting(x, y, obj_solid))
+{
+    instance_destroy();
+}
+
+// Destroy if hit by a bullet
+if(hp == 0)
 {
     instance_destroy();
 }
