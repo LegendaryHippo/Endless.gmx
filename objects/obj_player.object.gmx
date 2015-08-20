@@ -73,17 +73,32 @@ switch state
     scr_player_attack();
     break;
     
-    
+    case p_state.hit:
+    scr_player_hit();
+    break;
 }
 
+// Counting
 if(state_timer &lt; 10000)
 {
     state_timer++;
 }
 
-if(place_meeting(x, y, par_enemy))
+// Go to the hit state
+if(place_meeting(x, y, par_enemy) &amp;&amp; (state != p_state.hit))
 {
     state = p_state.hit;
+    state_timer = 0;
+    
+    // Check if the player dies
+    if(hp &gt; 1)
+    {
+        hp -= 1;
+    }
+    else
+    {
+        game_restart();
+    }
 }
 </string>
           </argument>

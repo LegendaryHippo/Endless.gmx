@@ -15,6 +15,7 @@ enum p_state
 {
     normal,
     attack,
+    hit,
     
 }
 
