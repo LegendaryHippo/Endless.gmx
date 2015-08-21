@@ -2,7 +2,7 @@
 
 
 // Change to normal state
-if(state_timer == room_speed * 0.5)
+if(state_timer == room_speed)
 {
     
     // Shoot in the direction it's facing
