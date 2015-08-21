@@ -62,7 +62,7 @@ state_timer = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Switch the state
+            <string>/// Player behaviour
 switch state
 {
     case p_state.normal:
@@ -98,6 +98,13 @@ if(place_meeting(x, y, par_enemy) &amp;&amp; (state != p_state.hit))
     else
     {
         game_restart();
+    }
+    
+    // Destroy the bullet that hits the player
+    var hit_b = instance_nearest(x, y, obj_e_attack);
+    with(hit_b)
+    {
+        instance_destroy();
     }
 }
 </string>

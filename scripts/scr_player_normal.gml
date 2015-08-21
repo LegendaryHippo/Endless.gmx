@@ -1,6 +1,6 @@
 /// scr_player_normal
 scr_get_input();
-
+image_alpha = 1;
 // Move
 hsp = spd * (key_right - key_left);
 vsp = spd * (key_down - key_up);

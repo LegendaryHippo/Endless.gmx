@@ -85,7 +85,8 @@ switch state
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(50, 50, string(fps));
+            <string>/// DRAW THE FPS
+draw_text(10, 10, string(fps));
 </string>
           </argument>
         </arguments>
@@ -108,7 +109,13 @@ switch state
             <kind>1</kind>
             <string>/// Draw the wave
 draw_text(room_width / 2, room_height / 4, "WAVE: " + string(wave));
-draw_text(50, 100, string(obj_player.hp));
+
+// Draw the player hp
+var p_exist = instance_exists(obj_player);
+if(p_exist)
+{
+    draw_text(50, 100, string(obj_player.hp));
+}
 </string>
           </argument>
         </arguments>
