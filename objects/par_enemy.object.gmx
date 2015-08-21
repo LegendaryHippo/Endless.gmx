@@ -25,11 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Enemy variables
+            <string>/// Enemy variables and creation code
 hsp = 0;
 vsp = 0;
 dir = 0;
 state_timer = 0;
+
+// Check if it's inside a wall
+if(place_meeting(x, y, obj_solid))
+{
+    var wall_size = 16;
+    var x_pos = irandom_range(0 + wall_size, room_width - wall_size);
+    var y_pos = irandom_range(0 + wall_size, room_height - wall_size);
+    var enemy = choose(obj_basic_enemy, obj_shoot_enemy);
+    
+    instance_create(x_pos, y_pos, enemy);
+    
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
